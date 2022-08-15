@@ -1,6 +1,16 @@
 // Created by Apiwat Tatsanakitti 
 
 const express = require('express')
+const cors = require('cors')
+const app = express()
+
+app.use(
+	cors({
+		// origin: "http://[public-ip]"
+		origin: "http://3.0.30.183",
+		methods: ["GET", "POST", "PUT", "DELETE"],
+	})
+)
 
 // MongoDB Config
 const MongoClient = require("mongodb").MongoClient
@@ -11,8 +21,6 @@ const db_port = 27017
 
 const url = `mongodb://${db_user}:${db_pass}@${db_host}:${db_port}`
 console.log(url)
-
-const app = express()
 
 app.use(function(req, resp, next) {
 	// Website 
