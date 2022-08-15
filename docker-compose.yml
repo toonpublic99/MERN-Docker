@@ -1,0 +1,52 @@
+# Created by Apiwat Tatsanakitti
+
+version: "3.9"
+
+services:
+  mongodb:
+    build: mongodb/
+    image: mongodb-img:1.0
+    container_name: mongodb-container
+    volumes:
+      - ./mongodb/data:/data/db
+    networks:
+      - web_network
+    restart: always   # จะทำการ restart เมื่อ service ดับ มีปัญหา ใช้งานไม่ได้
+  nodejs:
+    depends_on:
+      - mongodb
+    build: nodejs/
+    image: nodejs-img:1.0
+    container_name: nodejs-container
+    volumes:
+      - /usr/app/node_modules
+      - ./nodejs:/usr/app
+    ports:
+      - 8000:3000
+    environment:
+      - DATABASE_USER=admin
+      - DATABASE_PASSWORD=1234
+      - DATABASE_HOST=mongodb
+    networks:
+      - web_network
+    restart: always
+  reactjs:
+    depends_on:
+      - mongodb
+    build: frontend/
+    image: reactjs-img:1.0
+    container_name: reactjs-container
+    volumes:
+      - /usr/app/node_modules
+      - ./frontend:/usr/app
+    networks:
+      - web_network
+    restart: always
+    ports:
+      #- 8181:80
+      - 80:80
+
+networks:
+  web_network:
+    name: mern-network
+    driver: bridge          
