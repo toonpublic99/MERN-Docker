@@ -4,6 +4,8 @@ const express = require('express')
 const cors = require('cors')
 const app = express()
 
+
+// Fix CORS Error
 app.use(
 	cors({
 		// origin: "http://[public-ip]"
@@ -11,6 +13,7 @@ app.use(
 		methods: ["GET", "POST", "PUT", "DELETE"],
 	})
 )
+
 
 // MongoDB Config
 const MongoClient = require("mongodb").MongoClient
