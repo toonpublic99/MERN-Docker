@@ -1,7 +1,8 @@
 # Created by Apiwat Tatsanakitti
 
 # Base Image
-FROM node:lts-alpine
+# FROM node:lts-alpine
+FROM node:16.16.0-alpine3.16
 
 # Working Directory (WORKDIR)
 WORKDIR /usr/app
