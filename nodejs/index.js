@@ -10,7 +10,7 @@ app.use(
 	cors({
 		// origin: "http://[public-ip]"
 		origin: "http://3.0.30.183",
-		methods: ["GET", "POST", "PUT", "DELETE"],
+		methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
 	})
 )
 
@@ -68,6 +68,10 @@ app.post("/api", (req,res) => {
 
 app.put("/api", (req,res) => {
 	res.send("Reply >> Put")
+})
+
+app.patch("/api", (req,res) => {
+	res.send("Reply >> Patch")
 })
 
 app.delete("/api", (req,res) => {
