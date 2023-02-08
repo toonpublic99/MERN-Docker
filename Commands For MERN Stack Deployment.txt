@@ -1,0 +1,66 @@
+>> Install Docker
+
+1. cd ~/
+2. sudo apt update && sudo apt upgrade -y
+
+# Install required dependencies
+3. sudo apt install lsb-release ca-certificates apt-transport-https software-properties-common -y
+
+# Adding Docker repository to system sources
+4. sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+# Execute the following command for adding the Docker repository to your Ubuntu 22.04 system
+5. echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+# Update system packages
+6. sudo apt update
+
+# Install Docker on Ubuntu 22.04
+7. sudo apt install docker-ce -y
+
+# Verify Docker status
+8. sudo systemctl status docker
+
+# Docker Testing
+9. sudo docker run hello-world
+10. sudo docker ps -a
+
+-----------------
+
+>> Install Docker Compose
+
+11. cd ~/
+
+12. sudo apt update
+
+# Download Docker repository
+13. sudo curl -L "https://github.com/docker/compose/releases/download/v2.7.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+# Change File Permissions
+14. sudo chmod +x /usr/local/bin/docker-compose
+
+# Check Docker Compose Version
+15. docker-compose --version
+
+-----------------
+
+>> Deploy MERN-Stack
+
+16. cd ~/
+
+17. sudo apt update
+
+18. sudo apt install git
+
+19. sudo git clone https://github.com/toonpublic99/MERN-Docker
+
+20. cd ~/MERN-Docker (cd /home/ubuntu/MERN-Docker)
+
+21. sudo docker-compose config -q
+
+22. sudo docker-compose up -d [--build]
+
+23. sudo docker-compose ps
+
+24. sudo docker images
+
