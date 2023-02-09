@@ -8,8 +8,8 @@ const app = express()
 // Fix CORS Error
 app.use(
 	cors({
-		// origin: "http://[public-ip]"
-		origin: "http://3.0.30.183",
+		// origin: "http://[public-ip-address]"
+		origin: "http://[public-ip-address]",
 		methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
 	})
 )
