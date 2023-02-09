@@ -3,8 +3,8 @@
 import {useState, useEffect} from 'react'
 import axios from 'axios'
 
-// const baseURL = "http://[public-ip]:8000/api/TestDB"
-const baseURL = "http://3.0.30.183:8000/api/TestDB"
+// const baseURL = "http://[public-ip-address]:8000/api/TestDB"
+const baseURL = "http://[public-ip-address]:8000/api/TestDB"
 
 function App() {
 
