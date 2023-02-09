@@ -1,9 +1,6 @@
-Ubuntu Linux
------------------
-
 >> Install Docker
 
-1. cd ~
+1. cd ~/
 2. sudo apt update && sudo apt upgrade -y
 
 # Install required dependencies
@@ -32,7 +29,7 @@ Ubuntu Linux
 
 >> Install Docker Compose
 
-11. cd ~
+11. cd ~/
 
 12. sudo apt update
 
@@ -49,7 +46,7 @@ Ubuntu Linux
 
 >> Deploy MERN-Stack
 
-16. cd ~
+16. cd ~/
 
 17. sudo apt update
 
@@ -64,7 +61,6 @@ Ubuntu Linux
 22. sudo docker-compose up -d [--build]
 
 23. sudo docker-compose ps
-หรือใช้  sudo docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Status}}\t{{.Ports}}"
 
 24. sudo docker images
 
